@@ -1,9 +1,12 @@
 #!flask/Scripts/python
 from flask import Flask, jsonify, abort, make_response, request
 
-app = Flask(__name__) #this is a strongly private variable
+#create an instance of Flask class
+#__name__ this is a strongly private variable
+#__name__ : started as application / not importad as a module ??
+app = Flask(__name__)
 
-#memory database of tasks - simple array of dictionaries
+#database of tasks in memory - simple array of dictionaries
 tasks = [
 	{
 		"id": 1,
@@ -18,6 +21,8 @@ tasks = [
 		"done": False
 	}
 ]
+
+#@app => decorator, used to change the methods v.s.
 
 #helpers
 @app.errorhandler(404)
